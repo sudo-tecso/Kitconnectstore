@@ -1,0 +1,307 @@
+import { Product, Category } from '@/types/database';
+
+export const MOCK_CATEGORIES: Category[] = [
+  {
+    id: 'c1000000-0000-0000-0000-000000000001',
+    name: 'Power & Chargers',
+    slug: 'power-chargers',
+    description: 'High-speed GaN chargers, power banks, and wireless charging pads',
+    image_url: 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80',
+    is_active: true,
+    sort_order: 1,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  },
+  {
+    id: 'c1000000-0000-0000-0000-000000000002',
+    name: 'Cables & Adapters',
+    slug: 'cables-adapters',
+    description: 'Heavy-duty braided USB-C, Lightning, and multi-port adapters',
+    image_url: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80',
+    is_active: true,
+    sort_order: 2,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  },
+  {
+    id: 'c1000000-0000-0000-0000-000000000003',
+    name: 'Audio & Acoustics',
+    slug: 'audio-acoustics',
+    description: 'TWS wireless earbuds, ANC headphones, and Bluetooth speakers',
+    image_url: 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800&q=80',
+    is_active: true,
+    sort_order: 3,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  },
+  {
+    id: 'c1000000-0000-0000-0000-000000000004',
+    name: 'Mounts & Accessories',
+    slug: 'mounts-accessories',
+    description: 'Magnetic car mounts, desk stands, and ergonomic phone holders',
+    image_url: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=800&q=80',
+    is_active: true,
+    sort_order: 4,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+  },
+];
+
+export const MOCK_PRODUCTS: Product[] = [
+  {
+    id: 'p1000000-0000-0000-0000-000000000001',
+    category_id: 'c1000000-0000-0000-0000-000000000001',
+    name: 'Apex 65W GaN Dual USB-C Fast Charger',
+    slug: 'apex-65w-gan-fast-charger',
+    sku: 'KC-CHG-65W',
+    short_description: 'Ultra-compact 65W GaN charger with dual USB-C Power Delivery ports.',
+    description: 'Engineered with advanced Gallium Nitride (GaN) semiconductor tech, the Apex 65W delivers high-efficiency charging for laptops, smartphones, and tablets simultaneously.',
+    price: 195.00,
+    compare_at_price: 240.00,
+    brand: 'KitConnect Pro',
+    specifications: {
+      'Power Output': '65W Max',
+      'Ports': '2x USB-C PD 3.0',
+      'Material': 'Fireproof PC Polycarbonate',
+      'Efficiency': '92%',
+      'Weight': '115g'
+    },
+    is_featured: true,
+    is_active: true,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+    category: MOCK_CATEGORIES[0],
+    images: [
+      {
+        id: 'img-1',
+        product_id: 'p1000000-0000-0000-0000-000000000001',
+        image_url: 'https://images.unsplash.com/photo-1583863788434-e58a36330cf0?auto=format&fit=crop&w=800&q=80',
+        alt_text: 'Apex 65W GaN Charger Front View',
+        sort_order: 1,
+        is_primary: true,
+        created_at: new Date().toISOString(),
+      }
+    ],
+    inventory: {
+      id: 'inv-1',
+      product_id: 'p1000000-0000-0000-0000-000000000001',
+      quantity: 45,
+      reserved_quantity: 0,
+      low_stock_threshold: 5,
+      updated_at: new Date().toISOString(),
+    }
+  },
+  {
+    id: 'p1000000-0000-0000-0000-000000000002',
+    category_id: 'c1000000-0000-0000-0000-000000000002',
+    name: 'ArmorBraid 100W USB-C to USB-C Cable (2m)',
+    slug: 'armorbraid-100w-usbc-cable-2m',
+    sku: 'KC-CBL-100W-2M',
+    short_description: 'Kevlar-reinforced 100W 5A fast charge braided cable with LED trace indicator.',
+    description: 'Built for extreme durability and ultra-fast power delivery up to 100W (20V/5A) with integrated smart E-marker chip.',
+    price: 75.00,
+    compare_at_price: 90.00,
+    brand: 'KitConnect Pro',
+    specifications: {
+      'Current': '5A Max',
+      'Data Speed': '480 Mbps',
+      'Length': '2 meters',
+      'Jacket': 'Double Nylon Braided',
+      'Bend Test': '30,000+ bends'
+    },
+    is_featured: true,
+    is_active: true,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+    category: MOCK_CATEGORIES[1],
+    images: [
+      {
+        id: 'img-2',
+        product_id: 'p1000000-0000-0000-0000-000000000002',
+        image_url: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=800&q=80',
+        alt_text: 'ArmorBraid 100W Cable Detail',
+        sort_order: 1,
+        is_primary: true,
+        created_at: new Date().toISOString(),
+      }
+    ],
+    inventory: {
+      id: 'inv-2',
+      product_id: 'p1000000-0000-0000-0000-000000000002',
+      quantity: 80,
+      reserved_quantity: 0,
+      low_stock_threshold: 10,
+      updated_at: new Date().toISOString(),
+    }
+  },
+  {
+    id: 'p1000000-0000-0000-0000-000000000003',
+    category_id: 'c1000000-0000-0000-0000-000000000001',
+    name: 'VoltCore 20,000mAh 45W Power Bank',
+    slug: 'voltcore-20000mah-45w-power-bank',
+    sku: 'KC-PB-20K-45W',
+    short_description: 'High-capacity power bank with digital LED battery readout and 45W laptop charging.',
+    description: 'Features premium lithium-polymer cells, smart temperature management, and fast bi-directional charging.',
+    price: 320.00,
+    compare_at_price: 380.00,
+    brand: 'VoltCore',
+    specifications: {
+      'Capacity': '20,000mAh / 74Wh',
+      'USB-C Output': '45W PD',
+      'USB-A Output': '22.5W QC 3.0',
+      'Display': 'Digital LED %',
+      'Dimensions': '145 x 68 x 28 mm'
+    },
+    is_featured: true,
+    is_active: true,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+    category: MOCK_CATEGORIES[0],
+    images: [
+      {
+        id: 'img-3',
+        product_id: 'p1000000-0000-0000-0000-000000000003',
+        image_url: 'https://images.unsplash.com/photo-1609592424109-dd9892f1b177?auto=format&fit=crop&w=800&q=80',
+        alt_text: 'VoltCore 20000mAh Power Bank',
+        sort_order: 1,
+        is_primary: true,
+        created_at: new Date().toISOString(),
+      }
+    ],
+    inventory: {
+      id: 'inv-3',
+      product_id: 'p1000000-0000-0000-0000-000000000003',
+      quantity: 25,
+      reserved_quantity: 0,
+      low_stock_threshold: 5,
+      updated_at: new Date().toISOString(),
+    }
+  },
+  {
+    id: 'p1000000-0000-0000-0000-000000000004',
+    category_id: 'c1000000-0000-0000-0000-000000000003',
+    name: 'PulseBuds Pro Active Noise Cancelling TWS',
+    slug: 'pulsebuds-pro-anc-tws',
+    sku: 'KC-AUD-PBUDS',
+    short_description: 'True wireless earbuds with 35dB active noise cancellation and low-latency gaming mode.',
+    description: 'Custom-tuned 12mm titanium dynamic drivers deliver crystal-clear highs and deep sub-bass response.',
+    price: 280.00,
+    compare_at_price: 350.00,
+    brand: 'AudioTek',
+    specifications: {
+      'Bluetooth': '5.3',
+      'ANC Depth': '35dB Hybrid ANC',
+      'Playtime': '8h + 24h case',
+      'Water Resistance': 'IPX5',
+      'Codec': 'AAC / SBC'
+    },
+    is_featured: true,
+    is_active: true,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+    category: MOCK_CATEGORIES[2],
+    images: [
+      {
+        id: 'img-4',
+        product_id: 'p1000000-0000-0000-0000-000000000004',
+        image_url: 'https://images.unsplash.com/photo-1590658268037-6bf12165a8df?auto=format&fit=crop&w=800&q=80',
+        alt_text: 'PulseBuds Pro ANC Earbuds',
+        sort_order: 1,
+        is_primary: true,
+        created_at: new Date().toISOString(),
+      }
+    ],
+    inventory: {
+      id: 'inv-4',
+      product_id: 'p1000000-0000-0000-0000-000000000004',
+      quantity: 30,
+      reserved_quantity: 0,
+      low_stock_threshold: 5,
+      updated_at: new Date().toISOString(),
+    }
+  },
+  {
+    id: 'p1000000-0000-0000-0000-000000000005',
+    category_id: 'c1000000-0000-0000-0000-000000000004',
+    name: 'MagHold Aluminum Magnetic Desk Stand',
+    slug: 'maghold-aluminum-desk-stand',
+    sku: 'KC-MNT-MAGSTD',
+    short_description: 'Precision CNC aluminium desktop stand with N52 Neodymium magnets and 360 rotation.',
+    description: 'Sleek graphite dark mode finish matches high-end hardware. Weighted base with anti-slip silicone padding.',
+    price: 140.00,
+    compare_at_price: 170.00,
+    brand: 'KitConnect Pro',
+    specifications: {
+      'Material': 'Aerospace Aluminium Alloy',
+      'Magnet Array': '16x N52 Neodymium',
+      'Rotation': '360-degree ball joint',
+      'Weight': '210g'
+    },
+    is_featured: false,
+    is_active: true,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+    category: MOCK_CATEGORIES[3],
+    images: [
+      {
+        id: 'img-5',
+        product_id: 'p1000000-0000-0000-0000-000000000005',
+        image_url: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?auto=format&fit=crop&w=800&q=80',
+        alt_text: 'MagHold Desk Stand',
+        sort_order: 1,
+        is_primary: true,
+        created_at: new Date().toISOString(),
+      }
+    ],
+    inventory: {
+      id: 'inv-5',
+      product_id: 'p1000000-0000-0000-0000-000000000005',
+      quantity: 12,
+      reserved_quantity: 0,
+      low_stock_threshold: 3,
+      updated_at: new Date().toISOString(),
+    }
+  },
+  {
+    id: 'p1000000-0000-0000-0000-000000000006',
+    category_id: 'c1000000-0000-0000-0000-000000000002',
+    name: 'MatrixHub 7-in-1 USB-C Hub',
+    slug: 'matrixhub-7in1-usbc-hub',
+    sku: 'KC-HUB-7IN1',
+    short_description: 'Aluminum 7-in-1 multi-port hub featuring 4K 60Hz HDMI, 100W PD input, and SD card reader.',
+    description: 'Expand laptop connectivity effortlessly with high-speed 5Gbps USB 3.0 data ports and precision thermal dissipation.',
+    price: 220.00,
+    compare_at_price: 270.00,
+    brand: 'KitConnect Pro',
+    specifications: {
+      'HDMI': '4K @ 60Hz',
+      'PD Pass-through': '100W',
+      'USB 3.0 Ports': '3x 5Gbps',
+      'Card Reader': 'SD & MicroSD Dual Slot'
+    },
+    is_featured: true,
+    is_active: true,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
+    category: MOCK_CATEGORIES[1],
+    images: [
+      {
+        id: 'img-6',
+        product_id: 'p1000000-0000-0000-0000-000000000006',
+        image_url: 'https://images.unsplash.com/photo-1616440342230-016f1b24d032?auto=format&fit=crop&w=800&q=80',
+        alt_text: 'MatrixHub 7-in-1 Hub',
+        sort_order: 1,
+        is_primary: true,
+        created_at: new Date().toISOString(),
+      }
+    ],
+    inventory: {
+      id: 'inv-6',
+      product_id: 'p1000000-0000-0000-0000-000000000006',
+      quantity: 18,
+      reserved_quantity: 0,
+      low_stock_threshold: 4,
+      updated_at: new Date().toISOString(),
+    }
+  }
+];

@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-hanken: 'Hanken Grotesk', sans-serif;
+  --font-jetbrains: 'JetBrains Mono', monospace;
+}
+
+body {
+  background-color: #121315;
+  color: #e3e2e5;
+  font-family: var(--font-hanken);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom Stitch Utility Classes */
+.trace-line {
+  height: 2px;
+  background: linear-gradient(90deg, #b4c5ff 0%, transparent 100%);
+  box-shadow: 0 0 8px #b4c5ff;
+}
+
+.glow-hover {
+  transition: all 0.3s ease;
+}
+
+.glow-hover:hover {
+  box-shadow: inset 0 0 40px rgba(47, 111, 255, 0.08);
+  border-color: rgba(180, 197, 255, 0.4);
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 0 0 rgba(47, 111, 255, 0);
+  }
+  50% {
+    box-shadow: 0 0 15px 0 rgba(47, 111, 255, 0.25);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(47, 111, 255, 0);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s infinite;
+}
+
+.glass-card {
+  background: linear-gradient(180deg, rgba(29, 32, 37, 0.85) 0%, rgba(22, 24, 28, 0.95) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(38, 41, 47, 0.6);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #121315;
+}
+::-webkit-scrollbar-thumb {
+  background: #26292F;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #608bff;
+}
